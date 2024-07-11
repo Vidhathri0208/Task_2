@@ -1,0 +1,49 @@
+import java.util.*;
+class StudentGradeCalculator{
+    public static void main(String argV[]){
+        int n;
+        int tot=0;
+        int avg=0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of subjects: ");
+        n=sc.nextInt();
+        int arr[] = new int[n];
+        int i;
+        for(i=0;i<arr.length;i++){
+            System.out.print("Enter the subject-"+(i+1)+" marks: ");
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("The marks of student are: ");
+        for(i=0;i<arr.length;i++){
+            System.out.println("The marks of subject-"+(i+1)+" is: "+arr[i]);
+            tot=tot+arr[i];
+        }
+        System.out.println("The total marks secured by students in all subjects is: "+tot);
+        avg = tot/(arr.length);
+        System.out.println("The average percentage of the marks: "+avg+"%");
+        if(avg<100 && avg>90){
+            System.out.println("Grade: A");
+            System.out.println("Congratulations");
+        }
+        if(avg<90 && avg>80){
+            System.out.println("Grade: B");
+            System.out.println("Congratulations");
+        }
+        if(avg<80 && avg>70){
+            System.out.println("Grade: C");
+            System.out.println("Congratulations");
+        }
+        if(avg<70 && avg>60){
+            System.out.println("Grade: D");
+            System.out.println("Congratulations");
+        }
+        if(avg<60 && avg>35){
+            System.out.println("Grade: P");
+            System.out.println("Congratulations");    
+        }
+        if(avg<35){
+            System.out.println("Grade: F");
+             System.out.println("Sorry!! Better Luck Next Time...");
+        }   
+    }
+}
